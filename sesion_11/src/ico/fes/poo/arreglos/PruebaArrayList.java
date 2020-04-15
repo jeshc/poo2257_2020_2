@@ -7,6 +7,7 @@ package ico.fes.poo.arreglos;
     
 import ico.fes.poo.SmartPhone;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -63,12 +64,32 @@ public class PruebaArrayList {
         }
         
         //SmartPhone t = celulares.get(2);
-        
+       
         for (int i = 0; i < celulares.size(); i++) {
             System.out.println("++++++++++++++");
             System.out.println(celulares.get(i));
             
         }
         
+        System.out.println(" Usando iterator ...................");
+        Iterator iter = celulares.iterator();
+        while (iter.hasNext()) {
+            Object celObj = iter.next();
+            SmartPhone cel = (SmartPhone)celObj;
+            System.out.println( cel );
+            
+        }
+  
+        System.out.println(" Usando iterator, simplificado");
+        Iterator<SmartPhone> iter2 = celulares.iterator();
+        
+        while ( iter2.hasNext()) {
+            //System.out.println(iter2.next());
+            System.out.println(iter2.next().getPrecio() );
+        }
+        
+        
     }
+    
 }
+
