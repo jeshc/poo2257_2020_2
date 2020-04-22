@@ -14,7 +14,8 @@ import java.util.logging.Logger;
  */
 public class Calculadora {
     Aritmetica arit;
-
+    public static final int MAXIMO =10;
+    
     public Calculadora() {
     }
 
