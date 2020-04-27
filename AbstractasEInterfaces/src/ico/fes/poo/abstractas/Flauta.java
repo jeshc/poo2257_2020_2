@@ -30,6 +30,7 @@ public class Flauta extends Instrumento{
         System.out.println("emitiendo sonidos....");
     }
 
+
     @Override
     public void afinar() {
         System.out.println("Afinando la flauta...");
@@ -46,5 +47,11 @@ public class Flauta extends Instrumento{
     public void setMarca(String marca) {
         this.marca = marca;
     }
+
+    @Override
+    public String obtenerTipoInstrumento() {
+        return "Instrumento de musica de viento, es una flauta!";
+    }
+    
     
 }
