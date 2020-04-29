@@ -50,7 +50,7 @@ public class Flauta extends Instrumento{
 
     @Override
     public String obtenerTipoInstrumento() {
-        return "Instrumento de musica de viento, es una flauta!";
+        return "Instrumento de música de viento, es una flauta!";
     }
     
     
