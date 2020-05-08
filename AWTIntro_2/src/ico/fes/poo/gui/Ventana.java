@@ -13,6 +13,7 @@ import java.awt.HeadlessException;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import ico.fes.poo.gui.eventos.EventoGenerico;
+import ico.fes.poo.gui.eventos.EventosRaton;
 import ico.fes.poo.gui.eventos.EventosVentana;
 /**
  *
@@ -57,6 +58,7 @@ public class Ventana extends Frame {
 
         boton1.addActionListener(new EventoGenerico());
         this.addWindowListener(new EventosVentana());
+        boton2.addMouseListener(new EventosRaton());
     }
 
 }

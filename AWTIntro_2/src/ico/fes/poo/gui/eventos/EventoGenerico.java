@@ -17,6 +17,8 @@ public class EventoGenerico implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Un evento sucedió");
+        System.out.println( e.getSource() );
+        System.out.println( e.toString());
     }
     
 }
