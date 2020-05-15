@@ -14,6 +14,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -51,6 +52,7 @@ public class Ventana extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 textArea1.setText(textField1.getText());
+                JOptionPane.showMessageDialog(null, "Hola "+textField1.getText());
             }
 
         
