@@ -13,7 +13,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -76,6 +82,21 @@ public class VentanaComponentes extends JFrame {
                 jfc.showOpenDialog(null);
                 File archivo = jfc.getSelectedFile();
                 System.out.println("Ruta:"+archivo.getAbsolutePath());
+                try {
+                    FileReader fr= new FileReader(archivo);
+                    BufferedReader bf= new BufferedReader(fr);
+                    String linea="";
+                    do{
+                      linea=bf.readLine();
+                      area.setText(area.getText()+linea+"\n");
+                    }while(linea != null);
+                    
+                } catch (FileNotFoundException ex) {
+                    System.out.println("Error al leer el archivo!!!");
+                }catch(IOException eio){
+                    System.out.println("Error de lactura");
+                }
+                
             }
             
         });
@@ -84,7 +105,7 @@ public class VentanaComponentes extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int resp=JOptionPane.showConfirmDialog(
-                        null,
+                       null,
                         "¿Quieres continuar?",
                         "Responde:",
                         JOptionPane.YES_NO_OPTION,
