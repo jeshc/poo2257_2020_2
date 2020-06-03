@@ -120,6 +120,21 @@ public class AbstractModeloTablaLibro extends AbstractTableModel{
             case 0:
                 tmp.setTitulo((String)aValue);
                 break;
+            case 1:
+                tmp.setAutor((String)aValue);
+                break;
+            case 2:
+                tmp.setIsbn((String)aValue);
+                break;                
+            case 3:
+                tmp.setEditorial((String)aValue);
+                break;
+            case 4:
+                 tmp.setEdicion(((Integer)aValue).intValue());
+                 break;
+            case 5:
+                 tmp.setPrecio((float)aValue);    
+                 break;
             default:
                 throw new AssertionError();
         }
@@ -127,5 +142,9 @@ public class AbstractModeloTablaLibro extends AbstractTableModel{
         this.fireTableCellUpdated(rowIndex, columnIndex);
     }
 
+    public void addLibro(Libro nuevoLibro){
+        data.add(nuevoLibro);
+        this.fireTableDataChanged();
+    }
     
 }
