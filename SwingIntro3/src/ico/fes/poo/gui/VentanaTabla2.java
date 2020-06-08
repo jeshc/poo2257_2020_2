@@ -8,6 +8,7 @@ package ico.fes.poo.gui;
 import ico.fes.poo.modelo.AbstractModeloTablaLibro;
 import ico.fes.poo.modelo.Libro;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -252,6 +253,7 @@ public class VentanaTabla2 extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
+        validarCampos();
         Libro libro=new Libro();
         libro.setTitulo(jTextField1.getText());
         libro.setAutor(jTextField2.getText());
@@ -260,6 +262,7 @@ public class VentanaTabla2 extends javax.swing.JFrame {
         libro.setEdicion(Integer.parseInt(jTextField5.getText()));
         libro.setPrecio(Float.parseFloat(jTextField6.getText()));
         modelo.addLibro(libro);
+        limpiarFormulario();
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**
@@ -295,6 +298,22 @@ public class VentanaTabla2 extends javax.swing.JFrame {
                 new VentanaTabla2().setVisible(true);
             }
         });
+    }
+    
+    private void limpiarFormulario(){
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+    }
+    
+    private void validarCampos(){
+        if(jTextField1.getText().equals("")){
+            JOptionPane.showMessageDialog(this,
+   "El título es obligatorio, favor de llenar el campo");
+        }
     }
     
     AbstractModeloTablaLibro modelo;
